@@ -1,0 +1,2 @@
+# One time script command that will call the docker in the backend and the database
+# and cd into the frontend and start the app

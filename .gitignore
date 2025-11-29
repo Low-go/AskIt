@@ -1,0 +1,48 @@
+# Python / Django
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+db.sqlite3
+db.sqlite3-journal
+*.log
+local_settings.py
+staticfiles/
+media/
+
+# React Native / Expo
+node_modules/
+.expo/
+.expo-shared/
+dist/
+npm-debug.*
+yarn-error.log
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+secrets.json
