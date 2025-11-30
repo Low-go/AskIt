@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "setup": "npm install --prefix frontend && zellij --layout layout.kdl"
+    }
+}

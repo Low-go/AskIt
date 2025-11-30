@@ -1,0 +1,13 @@
+layout {
+    pane split_direction="vertical {
+        pane {
+            command "docker compose"
+            args "up"
+        }
+        pane{
+            cwd "frontend"
+            command "npx"
+            args "expo" "start"
+        }
+    }
+}

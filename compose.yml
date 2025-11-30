@@ -1,2 +1,8 @@
-# One time script command that will call the docker in the backend and the database
-# and cd into the frontend and start the app
+services:
+
+  build: ./backend
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./backend:/app
+
