@@ -1,6 +1,6 @@
-# AskIt
+# PasaBuy
 
-Welcome to **AskIt** - the Expo Go community-centered application designed to allow people to make requests in their community, connect or fulfill requests, and help those around them.
+Welcome to **PasaBuy** - the Expo Go community-centered application designed to allow people to make requests in their community, connect or fulfill requests, and help those around them.
 
 ## Tech Stack
 

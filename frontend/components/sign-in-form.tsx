@@ -11,18 +11,30 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Text } from '@/components/ui/text';
-import * as React from 'react';
+import { useState, useRef } from 'react';
 import { Pressable, type TextInput, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
-export function SignInForm() {
-  const passwordInputRef = React.useRef<TextInput>(null);
+interface SignInFormProps {
+  onSignIn: (email: string, password: string) => Promise<void>;
+  isLoading?: boolean;
+}
+
+export function SignInForm({ onSignIn, isLoading }: SignInFormProps) {
+  const passwordInputRef = useRef<TextInput>(null);
+  const router = useRouter();
+  const[email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   function onEmailSubmitEditing() {
     passwordInputRef.current?.focus();
   }
 
-  function onSubmit() {
+  async function onSubmit() {
     // TODO: Submit form and navigate to protected screen if successful
+
+    //these are just temp /test placeholders will come back to this
+    await onSignIn(email, password);
   }
 
   return (
@@ -47,6 +59,8 @@ export function SignInForm() {
                 onSubmitEditing={onEmailSubmitEditing}
                 returnKeyType="next"
                 submitBehavior="submit"
+                value={email}
+                onChangeText={setEmail}
               />
             </View>
             <View className="gap-1.5">
@@ -68,9 +82,11 @@ export function SignInForm() {
                 secureTextEntry
                 returnKeyType="send"
                 onSubmitEditing={onSubmit}
+                value={password}
+                onChangeText={setPassword}
               />
             </View>
-            <Button className="w-full" onPress={onSubmit}>
+            <Button className="w-full" onPress={onSubmit} disabled={isLoading}>
               <Text>Continue</Text>
             </Button>
           </View>
