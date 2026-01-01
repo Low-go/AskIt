@@ -13,6 +13,8 @@ echo "Deleting old migration stuff, strating fresh..."
 rm -rf core/migrations/*
 touch core/migrations/__init__.py
 
+python manage.py makemigrations
+
 # Apply migrations
 echo "Applying migrations..."
 python manage.py migrate
